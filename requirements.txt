@@ -1,0 +1,10 @@
+dm_haiku>=0.0.9
+jax>=0.4.11
+matplotlib>=3.5.1
+numpy>=1.19.2
+Pillow>=10.0.0
+scikit_learn>=1.0.2
+seaborn>=0.11.2
+torch>=1.13.1
+torchvision>=0.14.1
+tqdm>=4.62.3
