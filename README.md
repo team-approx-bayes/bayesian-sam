@@ -14,16 +14,6 @@ wget http://cs231n.stanford.edu/tiny-imagenet-200.zip
 
 ## examples
 
-### illustrative 2D example
-![](./animation.gif)
-
-To illustrate bSAM on the above simple 2D example, run the code
-```
-python3 demo2d.py 
-```
-
-This script saves a file  `animation.gif`, which is the animiation shown above. 
-
 ### ResNet-18 on CIFAR-10
 SGD:
 ```
@@ -57,7 +47,7 @@ This should produce around the following results
 ### ResNet-18 on CIFAR-100
 Similary, we can train on other datasets; here is for example bSAM on CIFAR-100:
 ```
-python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 10 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar100
+python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 10 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar100 --dafactor 4
 ```
 The run should converge to around ~80.2% test accuracy. 
 
@@ -95,3 +85,17 @@ This should produce around the following results
 * SGD: testacc=52.28%, nll=2.0077, ece=0.0452, auroc=0.8316
 * SAM: testacc=52.39%, nll=1.9961, ece=0.0317, auroc=0.8304
 * bSAM: testacc=53.37%, nll=1.9594, ece=0.0206, auroc=0.8272
+
+### illustrative 2D example
+![](./animation.gif)
+
+To illustrate bSAM on the above simple 2D example, run the code
+```
+python3 demo2d.py 
+```
+
+This script saves a file  `animation.gif`, which is the animiation shown above. 
+
+## troubleshooting
+
+Please contact [Thomas](thomas.moellenhoff@riken.jp) if there are issues or quesitons about the code, or raise an issue here in this github repository.
