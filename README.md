@@ -15,19 +15,19 @@ wget http://cs231n.stanford.edu/tiny-imagenet-200.zip
 ## examples
 
 ### ResNet-18 on CIFAR-10
-SGD:
+**SGD:**
 ```
 python3 train.py --alpha 0.03 --beta1 0.9 --priorprec 25 --optim sgd --dataset cifar10
 ```
 This should train to around ~94.8% test-accuracy. 
 
-SAM-SGD:
+**SAM-SGD:**
 ```
 python3 train.py --alpha 0.03 --beta1 0.9 --priorprec 25 --rho 0.05 --batchsplit 8 --optim sam --dataset cifar10
 ```
 This should train to around ~95.7% test-accuracy. 
 
-bSAM:
+**bSAM:**
 ```
 python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 10 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar10 --dafactor 4
 ```
@@ -57,19 +57,19 @@ To train on TinyImageNet, download the dataset using the link given above. Then 
 python3 setup_tinyimagenet.py
 ```
 
-Now, to train SGD on TinyImageNet we use:
+Now, to train **SGD** on TinyImageNet we use:
 ```
 python3 train.py --alpha 0.1 --beta1 0.95 --priorprec 20 --optim sgd --dataset tinyimagenet --model resnet20
 ```
 This should train to around ~52.2% test-accuracy. 
 
-SAM-SGD:
+**SAM-SGD:**
 ```
 python3 train.py --alpha 0.1 --beta1 0.95 --priorprec 20 --rho 0.01 --batchsplit 8 --optim sam --dataset tinyimagenet --model resnet20
 ```
 This should train to around ~52.4% test-accuracy. 
 
-bSAM:
+**bSAM:**
 ```
 python3 train.py --alpha 0.25 --beta1 0.9 --beta2 0.999 --priorprec 25 --rho 5e-5 --batchsplit 8 --optim bsam --dataset tinyimagenet --model resnet20 
 ```
