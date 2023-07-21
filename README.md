@@ -29,9 +29,9 @@ This should train to around ~95.7% test-accuracy.
 
 **bSAM:**
 ```
-python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 10 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar10 --dafactor 4
+python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 40 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar10 --dafactor 4
 ```
-This should train to around ~96.1% test-accuracy. 
+This should train to around ~96% test-accuracy. 
 
 To test our trained models and evaluate nll, ECE and AUROC we can use the following commands: 
 ```
@@ -42,14 +42,14 @@ python3 test.py --resultsfolder results/cifar10_resnet18/bsam/run_0 --testmc 32
 This should produce around the following results  
 * SGD: testacc=94.77%, nll=0.2058, ece=0.0306, auroc=0.9336
 * SAM: testacc=95.69%, nll=0.1431, ece=0.0134, auroc=0.9468
-* bSAM: testacc=96.11%, nll=0.1195, ece=0.0086, auroc=0.9560
+* bSAM: testacc=95.95%, nll=0.1239, ece=0.0082, auroc=0.9536
 
 ### ResNet-18 on CIFAR-100
 Similary, we can train on other datasets; here is for example bSAM on CIFAR-100:
 ```
-python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 10 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar100 --dafactor 4
+python3 train.py --alpha 0.5 --beta1 0.9 --beta2 0.999 --priorprec 40 --rho 0.01 --batchsplit 8 --optim bsam --dataset cifar100 --dafactor 4
 ```
-The run should converge to around ~80.2% test accuracy. 
+The run should converge to around ~80.4% test accuracy. 
 
 ### ResNet-20 on TinyImageNet
 To train on TinyImageNet, download the dataset using the link given above. Then extract the zip-File into the datasets directory and run 
